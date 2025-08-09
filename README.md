@@ -4,9 +4,8 @@
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![PyCBC](https://img.shields.io/badge/PyCBC-Science%20Toolkit-purple)
 ![gwpy](https://img.shields.io/badge/gwpy-LIGO%20Data%20Tools-lightblue)
-![License](https://img.shields.io/badge/License-MIT-green)
 ![Machine Learning](https://img.shields.io/badge/Deep%20Learning-1D%20CNN%20%7C%20Residual%20CNN-red)
-![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+![Status](https://img.shields.io/badge/Status-On%20Progress-yellow)
 ![Dataset](https://img.shields.io/badge/Data-LIGO%20O2%20%7C%20Synthetic-yellow)
 
 ## Project Description
@@ -104,8 +103,6 @@ Follow these steps in order:
 
 
 ## Results
-
-add images
 
 The table below summarizes the performance of all trained models on the **combined dataset** and their evaluation on **real gravitational wave events** and **real noise**.
 
