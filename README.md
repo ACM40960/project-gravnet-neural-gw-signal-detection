@@ -6,6 +6,9 @@
   <img src="https://img.icons8.com/fluency/48/telescope.png" width="28" style="vertical-align:middle;"/> 
   <span style="font-size:28px; font-weight:bold;"> GravNet: Gravitational Wave Signal Detection using Deep Learning </span>
 </p>
+<p align="center">
+  <b>Authors:</b> Sundararajan Srinivasan, Sweta Sankaran  
+</p>
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
@@ -192,13 +195,15 @@ Follow these steps in order:
 
 The table below summarizes the performance of all trained models on the **combined dataset** and their evaluation on **real gravitational wave events** and **real noise**.
 
-| Model                  | Validation Accuracy | ROC AUC  | Real GW Events Accuracy | Real Noise Accuracy |
-|------------------------|---------------------|----------|-------------------------|---------------------|
-| Deep CNN               | 84.0%               | 0.9335    | 100%                   | 100%               |
-| CNN + GRU              | 83.0%               | 0.9307    | 100%                   | 100%               |
-| Residual CNN           | 88.9%               | 0.9587    | 83.33%                 | 100%               |
-| CNN + Transformer      | 81.0%               | 0.9407    | 77.08%                 | 100%               |
-|**Ensemble(All Models)**| **100%**            | **1.000**| **100%**                | **100%**            |
+## Real Data Testing Results  
+
+| Model                | Accuracy   | Sensitivity (Recall) | Precision | F1 Score |
+|-----------------------|------------|-----------------------|-----------|----------|
+| Residual CNN          | 91.67%     | 83.33%                | 100.00%   | 90.91%   |
+| CNN + GRU             | 100.00%    | 100.00%               | 100.00%   | 100.00%  |
+| Pure CNN              | 100.00%    | 100.00%               | 100.00%   | 100.00%  |
+| CNN + Transformer     | 88.54%     | 77.08%                | 100.00%   | 87.06%   |
+| **Ensemble (Avg of 4)** | 100.00%    | 100.00%               | 100.00%   | 100.00%  |
 
 <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> **Detailed Results Notebooks**  
 
@@ -219,6 +224,15 @@ Each notebook includes **training curves, validation metrics, and performance an
 3. Real-time, low-latency deployment.
 4. Add explainability tools (e.g., saliency maps).
 5. Glitch classification module for noise rejection.
+
+
+## <img src="https://img.icons8.com/fluency/48/book-stack.png" width="20" style="vertical-align:middle;"/> References  
+
+1. Gabbard, A., Williams, M., Hayes, F., and Messenger, C. (2018). *Matching Matched Filtering with Deep Networks for Gravitational-Wave Astronomy*. **Physical Review Letters**, 120(14), 141103.  
+
+2. George, D., and Huerta, E.A. (2018). *Deep Learning for Real-time Gravitational Wave Detection and Parameter Estimation: Results with Advanced LIGO Data*. **Physics Letters B**, 778, 64–70.  
+
+3. Krastev, P.G. (2020). *Real-time Detection of Gravitational Waves from Binary Neutron Stars Using Artificial Neural Networks*. **Physics Letters B**, 803, 135330.  
 
 
 ## <img src="https://img.icons8.com/fluency/48/handshake.png" width="16" style="vertical-align:middle;"/> Acknowledgements
