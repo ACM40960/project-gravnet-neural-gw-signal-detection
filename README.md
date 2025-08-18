@@ -43,7 +43,7 @@ It consists of four categories:
   • Noise segments from the LIGO Hanford (H1) detector  
   • Real signal-injected noise (SEOBNRv2 waveforms injected into real noise)  
 
-🔭 **Signal Generation**  
+<img src="https://img.icons8.com/fluency/24/telescope.png" width="18" style="vertical-align:middle;"/>  **Signal Generation**  
 - Generated using **SEOBNRv2 waveform model**  
 - Component masses: **10–50 M⊙** (uniform)  
 - Spin parameters: **−0.99 to 0.99**  
@@ -52,7 +52,7 @@ It consists of four categories:
 
 ---
 
-## 📈 Example Time-Domain Data  
+### <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="18" style="vertical-align:middle;"/>  Example Time-Domain Data  
 
 Below are representative examples of the dataset:
 
@@ -73,14 +73,14 @@ Below are representative examples of the dataset:
   <br/>
   <em>Figure 3: Example of a BBH signal (SEOBNRv2) injected into noise.</em>
 </p>
----
-## 📦 Dataset Access  
+
+<img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> Dataset Access  
 
 The combined dataset (synthetic + real noise with signal injections) is available for direct download:  
 
-🔗 [Download Dataset (Google Drive)](YOUR_DRIVE_LINK_HERE)  
+<img src="https://img.icons8.com/fluency/24/link.png" width="18" style="vertical-align:middle;"/>  [Download Dataset (Google Drive)](https://drive.google.com/drive/folders/1bpVCBiB1myWyYaMcS4tGKT_K1J62Sgas?usp=sharing)  
 
-⚠️ The dataset file is large (approximately 28GB). Make sure you have stable internet and sufficient storage before downloading.
+<img src="https://img.icons8.com/fluency/24/error.png" width="18" style="vertical-align:middle;"/> The dataset file is large (approximately 28GB). Make sure you have stable internet and sufficient storage before downloading.
 
 Includes noise-only, signal-only, and injected series in `.csv` format, along with preprocessed training and validation splits.  
 
@@ -95,7 +95,7 @@ Here’s the high-level workflow of the GravNet pipeline:
   <img src="images/workflow.png" alt="Project Workflow" width="700"/>
 </p>
 
-### 🔄 Pipeline Steps  
+### <img src="https://img.icons8.com/fluency/24/synchronize.png" width="18" style="vertical-align:middle;"/>  Pipeline Steps  
 
 1. **Noise Selection**: Extract 4-second segments of O2 H1 strain data or generate synthetic noise at 4096 Hz.  
 2. **Signal Generation & Injection**: Create BBH waveforms (SEOBNRv2) with component masses 5–50 M☉, spins −0.99 to 0.99, and inclination 0–π, then inject at random times into synthetic & real noise (SNR 8–12).  
@@ -108,7 +108,7 @@ Here’s the high-level workflow of the GravNet pipeline:
 
 ---
 
-## 🛠 Preprocessing Techniques (more detailed view) 
+## <img src="https://img.icons8.com/fluency/24/maintenance.png" width="18" style="vertical-align:middle;"/>  Preprocessing Techniques (more detailed view) 
 
 To ensure the dataset closely resembles real GW detection conditions, we have applied the following steps:  
 
@@ -164,22 +164,22 @@ Remove --gpus all if you are running on CPU only.
 Follow these steps in order:
 
 1. **Generate Real Noise Data**  
-   📄 [Real noise generation.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Real%20noise%20generation.ipynb)
+   <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Real noise generation.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Real%20noise%20generation.ipynb)
 
 2. **Generate Combined Dataset**  
-   📄 [Combined dataset generation.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Combined%20dataset%20generation.ipynb)
+   <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Combined dataset generation.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Combined%20dataset%20generation.ipynb)
 
 3. **Train Models**
-   - 🧠 [CNN.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN.ipynb) — Train Deep CNN  
-   - 🧠 [CNN + GRU.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20GRU.ipynb) — Train CNN + GRU  
-   - 🧠 [Residual - CNN.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Residual%20-%20CNN.ipynb) — Train Residual CNN  
-   - 🧠 [CNN + Transformers.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20Transformers.ipynb) — Train CNN + Transformer  
+   - <img src="https://img.icons8.com/fluency/24/brain.png" width="18" style="vertical-align:middle;"/>  [CNN.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN.ipynb) — Train Deep CNN  
+   - <img src="https://img.icons8.com/fluency/24/brain.png" width="18" style="vertical-align:middle;"/>  [CNN + GRU.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20GRU.ipynb) — Train CNN + GRU  
+   - <img src="https://img.icons8.com/fluency/24/brain.png" width="18" style="vertical-align:middle;"/>  [Residual - CNN.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Residual%20-%20CNN.ipynb) — Train Residual CNN  
+   - <img src="https://img.icons8.com/fluency/24/brain.png" width="18" style="vertical-align:middle;"/> [CNN + Transformers.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20Transformers.ipynb) — Train CNN + Transformer  
 
 4. **Download Original LIGO Data for Testing**  
-   📄 [Downloading Original Data For Testing.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Downloading%20Original%20Data%20For%20Testing.ipynb)
+   <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Downloading Original Data For Testing.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Downloading%20Original%20Data%20For%20Testing.ipynb)
 
 5. **Final Model Testing**  
-   📄 [Final Model Testing Using Original Data.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Final%20Model%20Testing%20Using%20Original%20Data.ipynb)
+   <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Final Model Testing Using Original Data.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Final%20Model%20Testing%20Using%20Original%20Data.ipynb)
 
 ---
 
@@ -200,14 +200,14 @@ The table below summarizes the performance of all trained models on the **combin
 | CNN + Transformer      | 81.0%               | 0.9407    | 77.08%                 | 100%               |
 |**Ensemble(All Models)**| **100%**            | **1.000**| **100%**                | **100%**            |
 
-📂 **Detailed Results Notebooks**  
+<img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> **Detailed Results Notebooks**  
 
 For a detailed information on each model's training results, click on the respective model below.
 
-- 📈 [Deep CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN.ipynb)  
-- 📈 [Residual CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Residual%20-%20CNN.ipynb)  
-- 📈 [CNN + GRU Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20GRU.ipynb)  
-- 📈 [CNN + Transformer Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20Transformers.ipynb)  
+- <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="18" style="vertical-align:middle;"/>  [Deep CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN.ipynb)  
+- <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="18" style="vertical-align:middle;"/>  [Residual CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Residual%20-%20CNN.ipynb)  
+- <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="18" style="vertical-align:middle;"/>  [CNN + GRU Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20GRU.ipynb)  
+- <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="18" style="vertical-align:middle;"/> [CNN + Transformer Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20Transformers.ipynb)  
 
 Each notebook includes **training curves, validation metrics, and performance analysis**.  
 
