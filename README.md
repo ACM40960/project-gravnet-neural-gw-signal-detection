@@ -1,50 +1,136 @@
-# 🌌 GravNet:Gravitational Wave Signal Detection using Deep Learning
+<p align="center">
+  <img src="images/blackholemerger.webp"  width="600"/>
+</p>
 
-![Python Version](https://img.shields.io/badge/Python-v3.8%2B-blue)
+<p align="center">
+  <img src="https://img.icons8.com/fluency/48/telescope.png" width="28" style="vertical-align:middle;"/> 
+  <span style="font-size:28px; font-weight:bold;"> GravNet: Gravitational Wave Signal Detection using Deep Learning </span>
+</p>
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-orange)
 ![PyCBC](https://img.shields.io/badge/PyCBC-Science%20Toolkit-purple)
 ![gwpy](https://img.shields.io/badge/gwpy-LIGO%20Data%20Tools-lightblue)
 ![Machine Learning](https://img.shields.io/badge/Deep%20Learning-1D%20CNN%20%7C%20Residual%20CNN-red)
-![Status](https://img.shields.io/badge/Status-On%20Progress-yellow)
+![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
 ![Dataset](https://img.shields.io/badge/Data-LIGO%20O2%20%7C%20Synthetic-yellow)
 
-## Project Description
+---
 
-This project presents a **deep learning based pipeline for detecting real gravitational wave signals** from binary black hole mergers in both synthetic and real LIGO noise. Using the SEOBNRv2 waveform model from PyCBC, we generated realistic datasets, applied advanced preprocessing techniques including tapering, bandpass filtering, cropping and SNR scaling, and trained multiple architectures such as Deep CNN, Residual CNN, CNN+GRU and CNN+Transformers to classify real signals from noise.
+## <img src="https://img.icons8.com/fluency/48/project.png" width="16" style="vertical-align:middle;"/> Project Description
 
-## Objectives
+This project presents a **deep learning–based pipeline for detecting gravitational wave signals** from binary black hole mergers in both **synthetic** and **real LIGO noise**.  
+Using the **SEOBNRv2 waveform model** from PyCBC, we generated realistic datasets, applied advanced preprocessing techniques (tapering, bandpass filtering, cropping, SNR scaling), and trained multiple architectures such as **Deep CNN, Residual CNN, CNN+GRU, and CNN+Transformers** to classify real signals from noise.
+
+---
+
+## <img src="https://img.icons8.com/fluency/48/goal.png" width="16" style="vertical-align:middle;"/> Objectives
 
 To develop and evaluate deep learning models for detecting real gravitational wave signals from noisy detector data using both simulated and real datasets.
 
-## Dataset Information and Preprocessing
+---
 
-This project uses a combined dataset designed to improve generalization for gravitational wave detection. It consists of four main categories:  
-&nbsp;&nbsp;&nbsp;&nbsp;• **Coloured synthetic noise** generated from the aLIGOZeroDetHighPower PSD.  
-&nbsp;&nbsp;&nbsp;&nbsp;• **Synthetic signal-injected noise**, where SEOBNRv2 waveforms are injected into coloured synthetic noise.  
-&nbsp;&nbsp;&nbsp;&nbsp;• **Real noise** segments from the LIGO Hanford (H1) detector.  
-&nbsp;&nbsp;&nbsp;&nbsp;• **Real signal-injected noise**, where SEOBNRv2 waveforms are injected into real noise.  
+## <img src="https://img.icons8.com/fluency/48/database.png" width="16" style="vertical-align:middle;"/> Dataset & Preprocessing
+
+This project uses a **combined dataset** of synthetic and real data designed to improve generalization for gravitational wave detection.  
+It consists of four categories:
+
+- **Synthetic Data**  
+  • Coloured noise generated from the aLIGOZeroDetHighPower PSD  
+  • Synthetic signal-injected noise (SEOBNRv2 waveforms injected into synthetic noise)  
+
+- **Real Data**  
+  • Noise segments from the LIGO Hanford (H1) detector  
+  • Real signal-injected noise (SEOBNRv2 waveforms injected into real noise)  
 
 🔭 **Signal Generation**  
-&nbsp;&nbsp;&nbsp;&nbsp;• Signals are generated using the **SEOBNRv2** waveform model.  
-&nbsp;&nbsp;&nbsp;&nbsp;• Component masses uniformly sampled between **10–50 M⊙**.  
-&nbsp;&nbsp;&nbsp;&nbsp;• Spin parameters drawn from **−0.99 to 0.99**.  
-&nbsp;&nbsp;&nbsp;&nbsp;• Inclination angles uniformly sampled between **0 and π**.  
-&nbsp;&nbsp;&nbsp;&nbsp;• Each signal is scaled to a target **SNR between 8 and 12**.  
+- Generated using **SEOBNRv2 waveform model**  
+- Component masses: **10–50 M⊙** (uniform)  
+- Spin parameters: **−0.99 to 0.99**  
+- Inclination angles: **0 to π** (uniform)  
+- Each signal scaled to **SNR = 8–12**  
 
-🛠 **Preprocessing Steps**  
-&nbsp;&nbsp;&nbsp;&nbsp;1. **Tapering**: Tukey window (α = 0.5) to reduce edge artifacts.  
-&nbsp;&nbsp;&nbsp;&nbsp;2. **Bandpass Filtering**: 35–350 Hz to match LIGO’s sensitive band.  
-&nbsp;&nbsp;&nbsp;&nbsp;3. **Cropping**: Fixed 4-second segments at a 4096 Hz sample rate.  
-&nbsp;&nbsp;&nbsp;&nbsp;4. **PSD Estimation**: Used for accurate SNR scaling.  
-&nbsp;&nbsp;&nbsp;&nbsp;5. **Signal Injection**: Added at random times (1.0s, 1.5s, 2.0s, 2.5s, 3.0s).  
-&nbsp;&nbsp;&nbsp;&nbsp;6. **Saving Format**: All noise-only, signal-only, and injected time series are merged into unified `.csv` files, enabling direct use for training and testing.  
+---
 
-This preprocessing ensures the dataset closely resembles real gravitational wave detection conditions while retaining full experimental control over parameters.  
+## 📈 Example Time-Domain Data  
 
-## Project Structure
+Below are representative examples of the dataset:
 
-![Project Workflow](images/workflow.png)
+<p align="center">
+  <img src="images/Signal.png" alt="Clean signal" width="700"/>
+  <br/>
+  <em>Figure 1: Clean BBH signal (zoomed-in view) before injection.</em>
+</p>
 
+<p align="center">
+  <img src="images/Noise.png" alt="Noise segment" width="700"/>
+  <br/>
+  <em>Figure 2: 4-second noise-only segment extracted from LIGO O2 data.</em>
+</p>
+
+<p align="center">
+  <img src="images/Signal%20Injected.png" alt="Signal injected into noise" width="700"/>
+  <br/>
+  <em>Figure 3: Example of a BBH signal (SEOBNRv2) injected into noise.</em>
+</p>
+---
+## 📦 Dataset Access  
+
+The combined dataset (synthetic + real noise with signal injections) is available for direct download:  
+
+🔗 [Download Dataset (Google Drive)](YOUR_DRIVE_LINK_HERE)  
+
+⚠️ The dataset file is large (approximately 28GB). Make sure you have stable internet and sufficient storage before downloading.
+
+Includes noise-only, signal-only, and injected series in `.csv` format, along with preprocessed training and validation splits.  
+
+For users who prefer to generate the dataset manually, detailed Jupyter notebooks are provided in the [Usage](#usage) section.  
+
+
+## <img src="https://img.icons8.com/fluency/48/workflow.png" width="16" style="vertical-align:middle;"/> Project Structure
+
+Here’s the high-level workflow of the GravNet pipeline:  
+
+<p align="center">
+  <img src="images/workflow.png" alt="Project Workflow" width="700"/>
+</p>
+
+### 🔄 Pipeline Steps  
+
+1. **Noise Selection**: Extract 4-second segments of O2 H1 strain data or generate synthetic noise at 4096 Hz.  
+2. **Signal Generation & Injection**: Create BBH waveforms (SEOBNRv2) with component masses 5–50 M☉, spins −0.99 to 0.99, and inclination 0–π, then inject at random times into synthetic & real noise (SNR 8–12).  
+3. **Preprocessing**: Apply Tukey taper and band-pass filter (35–350 Hz), then crop to final segment.  
+4. **Dataset Split**: Create balanced training/validation sets (equal signal and noise samples).  
+5. **Scaling**: Standardize train, validation, and test sets using statistics from train-only data.  
+6. **Model Training**: Train CNN, Residual CNN, CNN+GRU, and Transformer models for signal vs. noise classification.  
+7. **Evaluation**: Test on confirmed BBH events using ensemble prediction.  
+8. **Classification**: Output as *Gravitational Wave* or *Noise*.  
+
+---
+
+## 🛠 Preprocessing Techniques (more detailed view) 
+
+To ensure the dataset closely resembles real GW detection conditions, we have applied the following steps:  
+
+1. **Tapering** – Tukey window (α = 0.5) to reduce spectral leakage and edge artifacts.  
+2. **Bandpass Filtering** – Restrict frequency content to 35–350 Hz (LIGO’s most sensitive band).  
+3. **Cropping** – Extract 4-second segments sampled at 4096 Hz.  
+4. **PSD Estimation & SNR Scaling** – Scale signals to a target SNR of 8–12 using noise PSD.  
+5. **Standardization** – Normalize train/val/test datasets using statistics from train-only data.  
+
+---
+
+## <img src="https://img.icons8.com/fluency/48/artificial-intelligence.png" width="16" style="vertical-align:middle;"/> Model Architectures
+
+Click on any model name to view its **full architecture diagram**:  
+
+#### <img src="https://img.icons8.com/fluency/24/combo-chart.png" width="20" style="vertical-align:middle;"/> [1. Deep CNN](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Images/Model%20Architecture/CNN-1.png)
+
+#### <img src="https://img.icons8.com/fluency/24/repeat.png" width="20" style="vertical-align:middle;"/> [2. Residual CNN](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Images/Model%20Architecture/Residual%20CNN-1.png)
+
+#### <img src="https://img.icons8.com/fluency/24/link.png" width="20" style="vertical-align:middle;"/> [3. CNN + GRU](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Images/Model%20Architecture/CNN%20-%20GRU-1.png)
+
+#### <img src="https://img.icons8.com/fluency/24/flash-on.png" width="20" style="vertical-align:middle;"/> [4. CNN + Transformer](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Images/Model%20Architecture/CNN%20-%20Transformers-1.png)
 
 ## Installation 
 
@@ -72,8 +158,8 @@ docker run -it --gpus all \
 Remove --gpus all if you are running on CPU only.
 
 
-## ▶️ Running the Project (Synthetic + Real Data Combined)
-## 🚀 Usage
+## <img src="https://img.icons8.com/fluency/48/play.png" width="16" style="vertical-align:middle;"/> Running the Project (Synthetic + Real Data Combined)
+## <img src="https://img.icons8.com/fluency/48/settings-3.png" width="16" style="vertical-align:middle;"/> Usage
 
 Follow these steps in order:
 
@@ -97,12 +183,12 @@ Follow these steps in order:
 
 ---
 
-📌 **Note**:  
-- All datasets will be saved in the `data/` directory (or your configured path).  
+**<img src="https://img.icons8.com/fluency/24/info.png" width="16" style="vertical-align:middle;"/> Note:**  
+- All datasets will be saved in the `data/` directory (or your configured path). 
 - Model weights will be stored in `models/`.   
 
 
-## Results
+## <img src="https://img.icons8.com/fluency/48/combo-chart.png" width="16" style="vertical-align:middle;"/> Results
 
 The table below summarizes the performance of all trained models on the **combined dataset** and their evaluation on **real gravitational wave events** and **real noise**.
 
@@ -114,14 +200,36 @@ The table below summarizes the performance of all trained models on the **combin
 | CNN + Transformer      | 81.0%               | 0.9407    | 77.08%                 | 100%               |
 |**Ensemble(All Models)**| **100%**            | **1.000**| **100%**                | **100%**            |
 
+📂 **Detailed Results Notebooks**  
 
-## Future Work
+For a detailed information on each model's training results, click on the respective model below.
+
+- 📈 [Deep CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN.ipynb)  
+- 📈 [Residual CNN Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Residual%20-%20CNN.ipynb)  
+- 📈 [CNN + GRU Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20GRU.ipynb)  
+- 📈 [CNN + Transformer Training Results](Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/CNN%20%2B%20Transformers.ipynb)  
+
+Each notebook includes **training curves, validation metrics, and performance analysis**.  
 
 
-## Acknowledgements
+## <img src="https://img.icons8.com/fluency/48/rocket.png" width="16" style="vertical-align:middle;"/> Future Work
+
+1. Extend to BNS, NS–BH, eccentric mergers, and lower SNR.
+2. Multi-detector fusion (H1, L1, V1) for robust detection.
+3. Real-time, low-latency deployment.
+4. Add explainability tools (e.g., saliency maps).
+5. Glitch classification module for noise rejection.
 
 
-## Contact
+## <img src="https://img.icons8.com/fluency/48/handshake.png" width="16" style="vertical-align:middle;"/> Acknowledgements
+
+This project was made possible with the help of the following:  
+
+- **Professor Sarp Akcay, University College Dublin** — for invaluable guidance and supervision throughout the course project.  
+- **LIGO Open Science Center (LOSC)** — for providing real gravitational wave strain data.  
+- **PyCBC Toolkit & GWpy** — essential for waveform generation, signal injection, preprocessing, and visualization.  
+
+## <img src="https://img.icons8.com/fluency/48/new-post.png" width="16" style="vertical-align:middle;"/> Contact
 
 sundararajan.work@gmail.com   
 swetasankaran.work@gmail.com
