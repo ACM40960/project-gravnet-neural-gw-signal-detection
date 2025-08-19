@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="images/blackholemerger.webp"  width="600"/>
+  <img src="Images/blackholemerger.webp"  width="600"/>
 </p>
 
 <p align="center">
@@ -60,19 +60,19 @@ It consists of four categories:
 Below are representative examples of the dataset:
 
 <p align="center">
-  <img src="images/Signal.png" alt="Clean signal" width="700"/>
+  <img src="Images/Signal.png" alt="Clean signal" width="700"/>
   <br/>
   <em>Figure 1: Clean BBH signal (zoomed-in view) before injection.</em>
 </p>
 
 <p align="center">
-  <img src="images/Noise.png" alt="Noise segment" width="700"/>
+  <img src="Images/Noise.png" alt="Noise segment" width="700"/>
   <br/>
   <em>Figure 2: 4-second noise-only segment extracted from LIGO O2 data.</em>
 </p>
 
 <p align="center">
-  <img src="images/Signal%20Injected.png" alt="Signal injected into noise" width="700"/>
+  <img src="Images/Signal%20Injected.png" alt="Signal injected into noise" width="700"/>
   <br/>
   <em>Figure 3: Example of a BBH signal (SEOBNRv2) injected into noise.</em>
 </p>
@@ -95,7 +95,7 @@ For users who prefer to generate the dataset manually, detailed Jupyter notebook
 Here’s the high-level workflow of the GravNet pipeline:  
 
 <p align="center">
-  <img src="images/workflow.png" alt="Project Workflow" width="700"/>
+  <img src="Images/workflow.png" alt="Project Workflow" width="700"/>
 </p>
 
 ### <img src="https://img.icons8.com/fluency/24/synchronize.png" width="18" style="vertical-align:middle;"/>  Pipeline Steps  
