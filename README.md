@@ -167,10 +167,9 @@ Remove --gpus all if you are running on CPU only.
 Follow these steps in order:
 
 1. **Generate Real Noise Data**  
-   <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Real noise generation.py](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Real%20Noise%20Download%20from%20H1%20detector%20O2%20run.py)
-
-  <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Cleaning Real noise generation.py](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Cleaning%20Real%20Noise%20From%20O2%20Run.py)
-
+- <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Real noise generation.py](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Real%20Noise%20Download%20from%20H1%20detector%20O2%20run.py)<br>
+   - <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Cleaning Real noise generation.py](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Cleaning%20Real%20Noise%20From%20O2%20Run.py)
+     
 2. **Generate Combined Dataset**  
    <img src="https://img.icons8.com/fluency/24/document.png" width="18" style="vertical-align:middle;"/> [Combined dataset generation.ipynb](https://github.com/ACM40960/project-gravnet-neural-gw-signal-detection/blob/main/Scripts/Working%20With%20Synthetic%20And%20Real%20Data%20Combined/Combined%20dataset%20generation.ipynb)
 
